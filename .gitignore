@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Tooling
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# postforge outputs (generated posts and media)
+out/
+
+# Secrets (not needed today, kept safe)
+.env
+.env.*
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store

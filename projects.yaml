@@ -1,0 +1,23 @@
+# Registro de proyectos que postforge puede publicar.
+# Un índice RAG por proyecto: `postforge index <slug>`.
+#
+# Schema:
+#   slug:            identificador corto (nombre de carpeta de caché e índice)
+#   name:            nombre para mostrar (campo "Nombre del proyecto" del formulario)
+#   path:            ruta local del repo (~ se expande)
+#   dates:           mes/año de inicio y fin (end: null = "trabajando actualmente")
+#   associated_with: empresa/institución asociada (null = ninguna)
+#   collaborators:   URLs o handles de LinkedIn de colaboradores
+#   status:          pilot | indexed | posted
+version: 1
+
+projects:
+  - slug: focusguard
+    name: FocusGuard
+    path: ~/Projects/focusguard
+    dates:
+      start: 2026-09
+      end: null
+    associated_with: null
+    collaborators: []
+    status: pilot

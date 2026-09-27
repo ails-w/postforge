@@ -31,6 +31,7 @@ El dato arquitectónico que lo explica todo: **evidencia y política son capas s
 - Lint: `uv run ruff check .`
 - Formato: `uv run ruff format .`
 - Modelos disponibles: `opencode models`
+- CLI del proyecto: `uv run postforge <index|brief|gen|refine|visuals> <slug>` (Fase 0: stubs que indican su fase)
 - **NUNCA ejecutar**: publicación automatizada en LinkedIn — no existe API para el perfil personal y automatizar el login arriesga la cuenta (ver `docs/adr/ADR-002-opencode-run-llm-backend.md`).
 
 ## Mapa del repo
@@ -75,6 +76,7 @@ Este es un proyecto de **APRENDIZAJE**. El objetivo es que el estudiante entiend
 - NO crear carpetas vacías ni duplicar contenido.
 - NO modificar `docs/handoff.md` salvo al iniciar/cerrar sesión.
 - NO automatizar login ni publicación en LinkedIn.
+- NO producir desde el chat: el chat **refina** (`refine`); producir es batch y reproducible.
 
 ## Gotchas conocidos
 

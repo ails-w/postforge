@@ -76,6 +76,29 @@ Reglas:
 - La salida se valida con Pydantic antes de tocar disco; si no valida, se reintenta una vez y se aborta con el error crudo.
 - En CI nunca se llama: se usa `FakeLlm` (ver `docs/development-plan.md`).
 
+## Cómo se usa (batch vs refine)
+
+| Comando | Tipo | Qué hace |
+|---|---|---|
+| `postforge index <slug>` | Batch | Escanea e indexa el proyecto |
+| `postforge brief <slug>` | Batch | Compresión con evidencia citada → `brief.json` |
+| `postforge gen <slug>` | Batch | Variantes de post + `form.md` + `checklist.md` |
+| `postforge refine <slug>` | Chat | Abre/continúa una sesión de opencode con el brief cargado |
+| `postforge visuals <slug>` | Batch | Mermaid → PNG, GIF, carrusel |
+
+Regla: **el chat refina y decide; no produce**. La producción es batch y reproducible (mismos inputs → mismas variantes), gobernada por `prompts/` y `knowledge/`. `refine` reutiliza el `sessionID` devuelto por `opencode run` (ADR-005).
+
+## Datos que NUNCA entran al repo
+
+| Dato | Dónde vive |
+|---|---|
+| Auth y credenciales de OpenCode | Perfil global de OpenCode (keyring) |
+| Índice del RAG | `~/.cache/postforge/<slug>/` |
+| Contenido generado | `out/` (gitignored) |
+| Cachés de tooling | `.venv/`, `.ruff_cache/`, `.atl/` (gitignored) |
+
+El proyecto no usa API keys: invoca el CLI ya autenticado. Antes de hacer público el repo, revisar que `prompts/` no lleve datos personales y que `knowledge/examples/` no exponga información de terceros.
+
 ## Datos y caché
 
 | Dato | Ubicación | Versionado |

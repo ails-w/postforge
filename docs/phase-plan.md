@@ -53,39 +53,40 @@
 
 ### Criterio de salida
 
-- [ ] `uv run postforge --help` responde.
-- [ ] CI (ruff + pytest) en verde.
-- [ ] La salida de `opencode run --format json` se parsea; modelos barato/fuerte elegidos (ADR-005).
-- [ ] Modelo de embeddings elegido con medición sobre el corpus baseline (ADR-004).
-- [ ] Los 4 docs de research existen, con fuentes y fecha.
-- [ ] `knowledge/` inicial existe y es consumible.
-- [ ] Learning y progress-log de Fase 0 completos; handoff apunta a Fase 1.
+- [x] `uv run postforge --help` responde.
+- [ ] CI (ruff + pytest) en verde (falta el primer push).
+- [x] La salida de `opencode run --format json` se parsea; modelos barato/fuerte elegidos (ADR-005).
+- [x] Modelo de embeddings elegido con medición (ADR-004).
+- [x] Los 4 docs de research existen, con fuentes y fecha.
+- [x] `knowledge/` existe y es consumible.
+- [ ] Learning y progress-log de Fase 0 completos; handoff apunta a Fase 1 (Lote 5).
 
 ### Features (TDD)
 
-#### Feature 0.1: Scaffold del paquete y CLI vacío
+#### Feature 0.1: Scaffold del paquete y CLI vacío ✅ (2026-09-27)
 
-- [ ] Test RED: `postforge --help` sale 0 y lista comandos.
-- [ ] `pyproject.toml` + `src/postforge/cli.py` con Typer (GREEN).
-- [ ] `uv run pytest` y `ruff` en verde; CI en GitHub Actions.
+- [x] Test RED: `postforge --help` sale 0 y lista comandos.
+- [x] `pyproject.toml` + `src/postforge/cli.py` con Typer (GREEN).
+- [x] `uv run pytest` y `ruff` en verde; CI en GitHub Actions (pendiente verificar en el primer push).
 
-#### Feature 0.2: Adaptador LLM (`opencode run`)
+#### Feature 0.2: Adaptador LLM (`opencode run`) ✅ (2026-09-27)
 
-- [ ] Test RED: `LlmClient.complete(prompt, model)` parsea `--format json` con un proceso falso.
-- [ ] `src/postforge/llm.py` con protocolo + implementación de subprocess (GREEN).
+- [x] Test RED: `LlmClient.complete(prompt, model)` parsea `--format json` con un proceso falso.
+- [x] `src/postforge/llm.py` con protocolo + implementación de subprocess (GREEN).
+- Nota: spike real OK — JSONL de eventos + `sessionID` (ADR-005).
 
-#### Feature 0.3: Spike de embeddings
+#### Feature 0.3: Spike de embeddings ✅ (2026-09-27)
 
-- [ ] Script de medición con preguntas fijas contra el corpus baseline.
-- [ ] Decisión documentada en ADR-004 (modelo, tamaño, idioma).
+- [x] Script de medición con preguntas fijas contra el corpus baseline (`scripts/spike_embeddings.py`).
+- [x] Decisión documentada en ADR-004 (modelo, tamaño, idioma).
 
-#### Feature 0.4: Research
+#### Feature 0.4: Research ✅ (2026-09-27)
 
-- [ ] `linkedin-form-contract.md`, `recruiter-search-ats.md`, `hooks-psychology.md`, `visuals-pipeline.md` con fuentes.
+- [x] `linkedin-form-contract.md`, `recruiter-search-ats.md`, `hooks-psychology.md`, `visuals-pipeline.md` con fuentes.
 
-#### Feature 0.5: Knowledge inicial
+#### Feature 0.5: Knowledge inicial ✅ (2026-09-27)
 
-- [ ] `knowledge/linkedin-form.md` + `knowledge/keyword-taxonomy.yaml` + `knowledge/README.md`.
+- [x] `knowledge/` completo: contrato del formulario, reglas de escritura, rúbrica, taxonomía (7 áreas / 42 skills), 5 arquetipos, visuals y examples. + Concepto transversal `docs/learning/uv.md`.
 
 ---
 
@@ -213,6 +214,7 @@
 
 - Selector de arquetipo (backend-api, cli-systems, data-rag, docs-learning, iac-security).
 - Plantillas Jinja2 + prompts `write-post` y `critique-post` con rúbrica.
+- `refine`: sesión de chat sobre la variante elegida (reusa el `sessionID` de opencode).
 - `form.md`: nombre ≤ 255, descripción ≤ 2000, 5 aptitudes con evidencia, fechas, colaboradores.
 - `checklist.md`: pasos previos a publicar.
 
@@ -259,6 +261,11 @@
 
 - [ ] Test RED: `postforge gen` escribe `out/<slug>/<fecha>/`.
 - [ ] `src/postforge/cli.py` ampliado (GREEN).
+
+#### Feature 3.6: `refine` (chat)
+
+- [ ] Test RED: el refine reusa el `sessionID` y persiste la versión final.
+- [ ] `src/postforge/write/refine.py` + CLI (GREEN).
 
 ---
 

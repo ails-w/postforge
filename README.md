@@ -6,7 +6,14 @@
 local embeddings), distills a small evidence brief, and writes a ready-to-paste LinkedIn
 post plus the fields for LinkedIn's "Add project" form.
 
-**Status:** Phase 0 — scaffolding. Nothing runs yet.
+**Status:** Phase 0 — the CLI and the LLM adapter already run; index, brief, write and visuals land in phases 1-4.
+
+## Quickstart
+
+```bash
+uv sync
+uv run postforge --help
+```
 
 ## Problem
 

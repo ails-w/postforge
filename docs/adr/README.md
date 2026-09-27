@@ -7,8 +7,8 @@ Registro de decisiones de arquitectura. **Una decisión = un archivo**, y cada A
 | [ADR-001](ADR-001-python-uv-stack.md) | Python 3.12 + uv como stack de la v1 | ✅ aceptado |
 | [ADR-002](ADR-002-opencode-run-llm-backend.md) | `opencode run --format json` como backend LLM | ✅ aceptado |
 | [ADR-003](ADR-003-rag-per-project-vs-knowledge.md) | RAG por proyecto y `knowledge/` como capa separada | ✅ aceptado |
-| ADR-004 | Modelo de embeddings (spike Fase 0) | ⏳ pendiente |
-| ADR-005 | Modelos del pipeline: barato (map) y fuerte (write) | ⏳ pendiente |
+| [ADR-004](ADR-004-embeddings-model.md) | Modelo de embeddings local | ✅ aceptado |
+| [ADR-005](ADR-005-models-and-json-contract.md) | Modelos del pipeline y contrato JSON de `opencode run` | ✅ aceptado |
 
 ## Cuándo crear un ADR
 

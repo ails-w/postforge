@@ -27,7 +27,12 @@ DOCS = [
     ("db-deep-dive/README.md", "Projects/db-deep-dive-portfolio/README.md"),
 ]
 
-EXPECTED = {0: "focusguard/01-pam-gate", 1: "focusguard/README.md", 2: "focusblock/ADR-002-ipc", 3: "focusblock/phase-04"}
+EXPECTED = {
+    0: "focusguard/01-pam-gate",
+    1: "focusguard/README.md",
+    2: "focusblock/ADR-002-ipc",
+    3: "focusblock/phase-04",
+}
 
 
 def read_snippet(relative: str, limit: int = 900) -> str:
@@ -38,7 +43,7 @@ def read_snippet(relative: str, limit: int = 900) -> str:
 
 
 def cosine(a, b) -> float:
-    dot = sum(x * y for x, y in zip(a, b))
+    dot = sum(x * y for x, y in zip(a, b, strict=True))
     norm_a = sum(x * x for x in a) ** 0.5
     norm_b = sum(x * x for x in b) ** 0.5
     return dot / (norm_a * norm_b)
@@ -62,9 +67,9 @@ def main() -> None:
 
     print(f"model: {args.model} ({len(doc_vectors[0])} dims, {elapsed:.1f}s total)")
     hits_at_1 = 0
-    for index, (query, vector) in enumerate(zip(QUERIES, query_vectors)):
+    for index, (query, vector) in enumerate(zip(QUERIES, query_vectors, strict=True)):
         scores = sorted(
-            ((cosine(vector, doc), label) for doc, label in zip(doc_vectors, labels)),
+            ((cosine(vector, doc), label) for doc, label in zip(doc_vectors, labels, strict=True)),
             reverse=True,
         )
         top = ", ".join(f"{label} ({score:.3f})" for score, label in scores[:2])

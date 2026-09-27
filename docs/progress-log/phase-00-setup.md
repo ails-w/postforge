@@ -74,7 +74,7 @@
 ## Métricas
 
 - Tests escritos: 15 (todos en verde)
-- Commits de la fase: 16
+- Commits de la fase: 17
 - Archivos versionados: 62
 - Cobertura: —
 

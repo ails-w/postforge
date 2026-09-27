@@ -15,7 +15,7 @@ Mapa de navegación de la documentación del proyecto. Este es el **índice úni
 | Arquitectura | `docs/architecture.md` | Pipeline, capas RAG/knowledge, contrato con `opencode run` |
 | Desarrollo | `docs/development-plan.md` | Testing, seams, fixtures, CI |
 | Diagramas | `docs/diagrams/` | Diagramas del proyecto (Mermaid/ASCII) |
-| Research | `docs/research/` | Evidencia de dominio con fuentes (5 docs) |
+| Research | `docs/research/` | Evidencia de dominio con fuentes (4 docs) |
 
 ## Fuera de docs
 

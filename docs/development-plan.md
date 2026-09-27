@@ -21,10 +21,20 @@
 
 Regla: si algo no se puede testear sin red, es un seam que falta — se inyecta, no se parchea.
 
-## Fixtures
+## Oráculo de ingesta (golden files)
 
-- `tests/fixtures/corpus/` — recortes de los 3 repos de `docs/research/corpus-baseline.md` (bash/C#/docs).
-- `tests/fixtures/expected/` — golden files: chunks esperados, resultados de búsqueda, brief canónico.
+El ingest se valida contra **2 repos reales y en curso** (`focusguard`, `focusblock`) — no contra todos los proyectos. El oráculo es una lista escrita a mano de qué debe encontrar el scanner; sin él, los tests solo afirman lo que el código hace, no lo correcto.
+
+| Repo | Familia | Query | Debe recuperar |
+|---|---|---|---|
+| focusguard | `iac-security` | `pam_time` | `modules/01-pam-gate` + `time.conf` |
+| focusguard | `iac-security` | `chattr +i` | `modules/03-integrity` |
+| focusblock | `cli-systems` | `Unix socket` | `IpcServer`/`IpcClient` + ADR-002 |
+| focusblock | `cli-systems` | `early stop` | `BlockEngine` + `ChallengeDialog` |
+
+- Fixtures: `tests/fixtures/corpus/{focusguard,focusblock}/` (recortes) + `tests/fixtures/expected/` (chunks y resultados esperados, escritos desde esta tabla).
+- El chunker explota patrones estructurales sin IA: ADRs (Contexto/Decisión/Consecuencias), `modules/NN-*/`, `learning/phase-*.md`, units `.service`/`.timer`.
+- El scanner **no asume git**: con repo usa `git ls-files`; sin repo, walk + exclusiones explícitas (`.git`, `bin`, `obj`, `node_modules`, `.venv`, `out`, `dist`).
 - Regla: si un golden cambia, el cambio se revisa a mano en el mismo commit.
 
 ## CI (GitHub Actions)

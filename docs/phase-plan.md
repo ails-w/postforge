@@ -31,7 +31,7 @@
 ### Scope
 
 - Scaffold del repo con estructura de docs alineada a focusblock.
-- 5 docs de research con fuentes y fecha (`docs/research/`).
+- 4 docs de research con fuentes y fecha (`docs/research/`).
 - `knowledge/` inicial (contrato del formulario + taxonomía de keywords).
 - Base de código: `uv`, Typer, pytest, ruff, CI en GitHub Actions.
 - Spike: parsear la salida de `opencode run --format json` y elegir modelos (barato/fuerte) → ADR-004 y ADR-005.
@@ -57,7 +57,7 @@
 - [ ] CI (ruff + pytest) en verde.
 - [ ] La salida de `opencode run --format json` se parsea; modelos barato/fuerte elegidos (ADR-005).
 - [ ] Modelo de embeddings elegido con medición sobre el corpus baseline (ADR-004).
-- [ ] Los 5 docs de research existen, con fuentes y fecha.
+- [ ] Los 4 docs de research existen, con fuentes y fecha.
 - [ ] `knowledge/` inicial existe y es consumible.
 - [ ] Learning y progress-log de Fase 0 completos; handoff apunta a Fase 1.
 
@@ -81,7 +81,7 @@
 
 #### Feature 0.4: Research
 
-- [ ] `linkedin-form-contract.md`, `recruiter-search-ats.md`, `hooks-psychology.md`, `visuals-pipeline.md`, `corpus-baseline.md` con fuentes.
+- [ ] `linkedin-form-contract.md`, `recruiter-search-ats.md`, `hooks-psychology.md`, `visuals-pipeline.md` con fuentes.
 
 #### Feature 0.5: Knowledge inicial
 
@@ -118,14 +118,16 @@
 
 ### Features (TDD)
 
-#### Feature 1.1: Scanner git-aware
+#### Feature 1.1: Scanner git-aware (con fallback sin git)
 
 - [ ] Test RED: ignora `bin/`, `obj/`, `.venv/` y archivos binarios.
+- [ ] Test RED: sin `.git`, hace walk con exclusiones explícitas.
 - [ ] `src/postforge/ingest/scanner.py` (GREEN).
 
 #### Feature 1.2: Chunker de markdown
 
 - [ ] Test RED: un heading abre chunk nuevo; metadata con path y heading.
+- [ ] Test RED: patrones estructurales (ADR, `modules/NN-*`, `learning/phase-*.md`) producen `section` y `order`.
 - [ ] `src/postforge/ingest/chunker.py` (GREEN).
 
 #### Feature 1.3: Chunker de código

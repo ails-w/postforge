@@ -4,15 +4,14 @@
 
 ## Fase activa
 
-**Fase 0 — Setup + research + spikes** (en curso: Lote 1 completado y Lote 2 al 40 % — research 2/5).
+**Fase 0 — Setup + research + spikes** (en curso: Lote 1 completo y Lote 2 al 75 % — research 3/4).
 
 ## Próximo paso
 
-1. **Lote 2b:** `recruiter-search-ats.md` + `hooks-psychology.md` (research).
-2. **Lote 2c:** `visuals-pipeline.md` + cierre del Lote 2.
-3. **Lote 3:** `knowledge/` (contrato del formulario, taxonomía, arquetipos, rúbrica).
-4. **Lote 4:** código (`uv`, CLI, `llm.py`, tests, CI) + spikes → ADR-004 (embeddings) y ADR-005 (modelos).
-5. **Lote 5:** `prompts/` + learning y progress-log de Fase 0.
+1. **Lote 2c:** `visuals-pipeline.md` + cierre del Lote 2.
+2. **Lote 3:** `knowledge/` (contrato del formulario, taxonomía, arquetipos, rúbrica).
+3. **Lote 4:** código (`uv`, CLI, `llm.py`, tests, CI) + spikes → ADR-004 (embeddings) y ADR-005 (modelos).
+4. **Lote 5:** `prompts/` + learning y progress-log de Fase 0.
 
 ## Decisiones recientes
 
@@ -22,7 +21,6 @@
 
 ## Riesgos
 
-- `db-deep-dive-portfolio` no es repo git → el scanner necesita fallback sin git (ver `docs/research/corpus-baseline.md` §H1).
 - Wheels para Python 3.14 inexistentes → mitigado: 3.12 gestionado con uv.
 - Cuota de la suscripción → mitigado: modelo barato para el map-reduce, fuerte solo para redacción.
 - `mmdc` puede requerir Chromium headless → verificar en Fase 4.

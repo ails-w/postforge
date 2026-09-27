@@ -14,10 +14,9 @@ Capa **OBSERVADO**: acá vive la evidencia con fuentes que justifica las reglas 
 | Doc | Pregunta que responde | Estado |
 |---|---|---|
 | `linkedin-form-contract.md` | ¿Qué campos y límites exactos exige el formulario «Añadir proyecto»? | ✅ 2026-09-27 |
-| `recruiter-search-ats.md` | ¿Cómo me encuentran y me filtran reclutadores y ATS? | ⏳ Lote 2b |
-| `hooks-psychology.md` | ¿Cómo me leen (y por qué dejan de leer)? | ⏳ Lote 2b |
+| `recruiter-search-ats.md` | ¿Cómo me encuentran y me filtran reclutadores y ATS? | ✅ 2026-09-27 |
+| `hooks-psychology.md` | ¿Cómo me leen (y por qué dejan de leer)? | ✅ 2026-09-27 |
 | `visuals-pipeline.md` | ¿Con qué imagen se postea un backend/script? | ⏳ Lote 2c |
-| `corpus-baseline.md` | ¿El ingest aguanta mis repos reales? | ✅ 2026-09-27 |
 
 ## Relación con otras capas
 

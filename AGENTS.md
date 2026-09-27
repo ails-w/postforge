@@ -66,7 +66,7 @@ Este es un proyecto de **APRENDIZAJE**. El objetivo es que el estudiante entiend
 
 - pytest + ruff. Dobles obligatorios para el LLM y los embeddings (ver `docs/development-plan.md`).
 - Los tests de CI **nunca** llaman a `opencode run` ni descargan modelos.
-- Corpus de referencia: los 3 repos de `docs/research/corpus-baseline.md` como golden files.
+- Corpus de referencia: `focusguard` y `focusblock` como golden files (ver `docs/development-plan.md` §Oráculo de ingesta).
 
 ## Límites / Do-nots
 

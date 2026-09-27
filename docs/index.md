@@ -27,6 +27,28 @@ Mapa de navegación de la documentación del proyecto. Este es el **índice úni
 | `prompts/` | Prompts versionados del pipeline (se crean en el Lote 5) |
 | `projects.yaml` | Registro de proyectos a publicar |
 
+## Ruta de lectura
+
+### Camino corto (~30 min)
+
+| # | Documento | Qué responde |
+|---|---|---|
+| 1 | `README.md` | Qué es postforge |
+| 2 | `docs/vision.md` | Alcance y qué queda fuera |
+| 3 | `docs/architecture.md` | **El corazón**: pipeline, capas y uso |
+| 4 | `docs/phase-plan.md` | Fases, features y criterios de salida |
+
+### Camino completo (por niveles)
+
+| Nivel | Documentos | Para qué |
+|---|---|---|
+| 0 | `docs/index.md` → `AGENTS.md` | Navegación y contrato de trabajo |
+| 1 | `docs/phase-plan.md` → `docs/handoff.md` | Cómo se construye y dónde estamos |
+| 2 | `docs/architecture.md` → `docs/adr/ADR-003-rag-per-project-vs-knowledge.md` → `docs/development-plan.md` | La máquina y sus decisiones |
+| 3 | `knowledge/README.md` → `knowledge/linkedin-form.md` → `knowledge/hooks-psychology.md` | Qué escribe y por qué funciona |
+| 4 | `docs/research/hooks-psychology.md` → `docs/research/recruiter-search-ats.md` | Evidencia con fuentes |
+| 5 | `docs/learning/uv.md` → ADR-001/002/004/005 → `docs/research/visuals-pipeline.md` | Herramientas y técnica |
+
 ## Reglas de docs
 
 - Idioma: Español. Nombres de carpetas/archivos en inglés.

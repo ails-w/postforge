@@ -30,8 +30,35 @@ Fuente: `docs/research/linkedin-form-contract.md` + capturas de la UI (2026-09-2
 
 ## Media: cuántas piezas y cómo se usan
 
-- **Recomendado: 2** (una principal + una de prueba). Máximo 3 en proyectos insignia. El formulario admite 50, la atención no.
-- Se generan en `out/<slug>/<fecha>/media/` (local, gitignored) y se suben **a mano** al formulario.
+- En el **formulario** (perfil): recomendado **2** (una principal + una de prueba). Máximo 3 en proyectos insignia. El formulario admite 50, la atención no.
+- En el **post** (feed): **1 pieza** por defecto (ver flujo abajo).
+- Se generan en `out/<slug>/<fecha>/media/` (local, gitignored) y se suben **a mano**.
 - Un PDF multi-página (carrusel) cuenta como **1** pieza.
 
-Fuente: `docs/research/linkedin-form-contract.md`, `docs/research/visuals-pipeline.md`.
+## Flujo de publicación (dos superficies)
+
+```text
+postforge gen <slug>
+   ├── post.md        → se pega en «Crear publicación» (feed)
+   ├── form.md        → se pega en Perfil → Añadir proyecto
+   ├── media/         → se adjunta a mano (una sola vez)
+   └── checklist.md   → pasos finales
+```
+
+### 1. Post del feed
+
+- Texto: `post.md` (≤ 3.000 caracteres; el hook vive antes del corte de ~140).
+- Media: **una sola elección** por post:
+  - **Imagen** (default): 1 pieza (portada o diagrama). Hasta 20 imágenes por post; ratio máximo 4:5 (vertical).
+  - **Documento PDF / carrusel** (opcional, proyectos insignia): 3-5 páginas (portada, diagrama, prueba). LinkedIn convierte cada página en imagen y se desliza.
+  - **Video/GIF** (`vhs`, Fase 4).
+- **No se mezcla**: documento + imágenes en el mismo post no es posible.
+- El texto del post **no** es la descripción del formulario.
+
+### 2. Formulario «Añadir proyecto»
+
+- `form.md` completo: nombre, descripción (≤ 2.000), 5 aptitudes, fechas, colaboradores, asociado con.
+- Media: hasta 50 elementos; acá sí conviven varias piezas (imagen + PDF + enlaces).
+- Publicar el formulario **después** del post: el post trae la visita; el proyecto queda como evidencia permanente y buscable.
+
+Fuente: LinkedIn Help `a527229` (multi-imagen, ratio 4:5), `a1516731` (formatos), `docs/research/visuals-pipeline.md`.

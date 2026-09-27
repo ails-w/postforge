@@ -12,6 +12,14 @@ Cada fase documenta los CONCEPTOS aprendidos en **UN archivo** `phase-NN-name.md
 | 3 | `phase-03-write.md` | ⏳ |
 | 4 | `phase-04-visuals.md` | ⏳ |
 
+## Conceptos transversales
+
+Herramientas que atraviesan todas las fases y se documentan aparte (misma estructura que una fase):
+
+| Concepto | Archivo | Estado |
+|----------|---------|--------|
+| Entorno y proyecto Python | `uv.md` | ✅ 2026-09-27 |
+
 ## Plantilla
 
 Usar `template-phase.md` para cada fase nueva. Cada archivo abre con un **glosario** y un **mapa de conceptos**, y cada concepto se desarrolla con una **capa de fundamentos**:

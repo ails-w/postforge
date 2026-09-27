@@ -16,7 +16,7 @@
 
 | # | Nombre | Estado | Conceptos | Log |
 |---|--------|--------|-----------|-----|
-| 0 | Setup + research + spikes | ⏳ | `phase-00-setup.md` | `phase-00-setup.md` |
+| 0 | Setup + research + spikes | ✅ (CI en el 1.er push) | `phase-00-setup.md` | `phase-00-setup.md` |
 | 1 | Ingesta + índice | ⏳ | `phase-01-ingest.md` | `phase-01-ingest.md` |
 | 2 | Comprensión | ⏳ | `phase-02-understand.md` | `phase-02-understand.md` |
 | 3 | Redacción + formulario | ⏳ | `phase-03-write.md` | `phase-03-write.md` |
@@ -24,7 +24,7 @@
 
 ---
 
-## Fase 0 — Setup + research + spikes ⏳
+## Fase 0 — Setup + research + spikes ✅ (2026-09-27; CI pendiente del primer push)
 
 **Objetivo:** Dejar el repo vivo (scaffold + docs), la evidencia de dominio investigada y los dos spikes técnicos resueltos: la salida JSON de `opencode run` y el modelo de embeddings.
 
@@ -59,7 +59,7 @@
 - [x] Modelo de embeddings elegido con medición (ADR-004).
 - [x] Los 4 docs de research existen, con fuentes y fecha.
 - [x] `knowledge/` existe y es consumible.
-- [ ] Learning y progress-log de Fase 0 completos; handoff apunta a Fase 1 (Lote 5).
+- [x] Learning y progress-log de Fase 0 completos; handoff apunta a Fase 1.
 
 ### Features (TDD)
 

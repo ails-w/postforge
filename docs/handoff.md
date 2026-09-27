@@ -4,40 +4,45 @@
 
 ## Fase activa
 
-**Fase 0 — Setup + research + spikes** (en curso: Lotes 1, 2, 3 y 4 completos; **solo falta el Lote 5**: prompts + learning/progress-log de Fase 0).
+**Fase 0 — COMPLETADA** (scaffold, research, knowledge, prompts, código base y spikes). Único pendiente: verificar el CI en el primer push.
+**Próxima: Fase 1 — Ingesta + índice** (se abre en rama `dev`).
 
 ## Próximo paso
 
-1. **Lote 5:** `prompts/` (extract-facts, synthesize-brief, write-post, critique-post) + `phase-00-setup.md` y `progress-log/phase-00-setup.md` → cierra Fase 0.
-2. Después: Fase 1 (ingesta + índice) en rama `dev` con PR al cerrar.
+1. **Primer push:** crear el repo remoto y verificar el CI (comando en §Repo).
+2. **Abrir Fase 1:** copiar `learning/template-phase.md` y `progress-log/template-phase.md` a `phase-01-ingest.*`; rama `dev`.
+3. **Feature 1.1:** scanner git-aware (con fallback sin git) → test RED primero.
 
 ## Decisiones recientes
 
-- Stack v1: Python 3.12 + uv (ADR-001). TUI en C# como upgrade path.
+- Stack v1: Python 3.12 + uv (ADR-001); TUI en C# como upgrade path.
 - LLM vía `opencode run --format json` (ADR-002); contrato JSONL + `sessionID` verificado (ADR-005).
 - RAG por proyecto y `knowledge/` separado (ADR-003).
-- Embeddings: `paraphrase-multilingual-MiniLM-L12-v2` por defecto (ADR-004).
-- Modelos: `deepseek-v4.1-flash` (map) + `glm-5.3` (redacción); corrida completa < USD 0,02 (ADR-005).
+- Embeddings: MiniLM multilingüe, con fusión léxica obligatoria (ADR-004).
+- Modelos: `deepseek-v4.1-flash` (map) + `glm-5.3` (redacción); corrida < USD 0,02 (ADR-005).
 - Interacción: batch + `refine` (chat que reusa `sessionID`).
 
-## Estado del código (Lote 4)
+## Estado del repo (cierre Fase 0)
 
-- `uv sync` funcionando con Python 3.12.14 gestionado por uv; `uv.lock` commiteado.
-- CLI con 5 comandos como stubs (`--help`, `--version`); 15 tests en verde; ruff limpio.
-- `llm.py`: adaptador real probado contra la suscripción (`adapter ok` + sesión devuelta).
-- CI configurado (setup-uv v10.1.0 + `uv sync --frozen` + ruff + pytest); **sin verificar hasta el primer push**.
-- Spike de embeddings corrido: `scripts/spike_embeddings.py` (4/4 proyecto correcto en ambos modelos).
-- Guía nueva: `docs/learning/uv.md` (concepto transversal).
+- `uv sync` OK con Python 3.12.14; `uv.lock` commiteado; 15 tests verdes; ruff limpio.
+- CLI con 5 comandos como stubs; adaptador LLM probado contra la suscripción.
+- `knowledge/` completo; `prompts/` con los 4 prompts del pipeline.
+- Guías de aprendizaje: `docs/learning/uv.md` (transversal) + `docs/learning/phase-00-setup.md`.
+- Historial de la fase: `docs/progress-log/phase-00-setup.md`.
 
 ## Riesgos
 
-- CI sin verificar: el primer push de GitHub es la prueba real (letra chica: `enable-cache` + lock).
-- Wheels para Python 3.14 inexistentes → mitigado: 3.12 gestionado con uv.
+- CI sin verificar hasta el primer push (setup-uv v10.1.0 + `uv sync --frozen`).
 - Cuota de la suscripción → mitigado: tier barato para el map; modelos configurables.
 - `mmdc` puede requerir Chromium headless → verificar en Fase 4.
-- Secretos: nada de la auth de OpenCode entra al repo (ver `docs/architecture.md` §Datos que NUNCA entran al repo). Opcional: `gitleaks` como pre-commit antes del push público.
+- Secretos: nada de la auth de OpenCode entra al repo. Opcional antes del push público: `gitleaks` como pre-commit.
 
-## Estado del repo
+## Repo
 
-- Rama `main`; commits directos durante Fase 0. Al iniciar Fase 1: rama `dev` + PR al cerrar fase.
-- Remoto previsto: `https://github.com/ails-w/postforge.git` (repo de GitHub pendiente de crear y primer push).
+```bash
+gh repo create postforge --public --source=. --remote=origin \
+  --description "Generate LinkedIn posts from a repository's real documentation (local RAG + OpenCode)"
+git push -u origin main
+# al abrir Fase 1:
+git checkout -b dev && git push -u origin dev
+```

@@ -75,7 +75,7 @@
 
 - Tests escritos: 15 (todos en verde)
 - Commits de la fase: 16
-- Archivos versionados: 78
+- Archivos versionados: 62
 - Cobertura: —
 
 ## Pendientes

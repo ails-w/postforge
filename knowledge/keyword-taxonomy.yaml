@@ -1,0 +1,286 @@
+# Vocabulario del dominio para encontrabilidad.
+#
+# Consumidores:
+#   - write/form.py  -> elige las 5 aptitudes del formulario
+#   - retrieval      -> usa `evidence` para buscar la prueba en el repo
+#
+# Fuente: docs/research/recruiter-search-ats.md
+# Regla: ninguna skill entra al formulario sin evidencia en el repo (disclaimers.md).
+# `avoid`: frases vagas que NO deben reemplazar al término canónico.
+
+version: 1
+
+areas:
+
+  sistemas-linux:
+    label: "Sistemas Linux"
+    skills:
+      - term: "Linux"
+        es: ["Linux", "GNU/Linux"]
+        en: ["Linux"]
+        evidence: ["arch", "/etc", "kernel", "uname", "bash"]
+        avoid: ["sistema operativo"]
+
+      - term: "systemd"
+        es: ["systemd", "unidades de systemd"]
+        en: ["systemd", "systemd units"]
+        evidence: [".service", ".timer", "systemctl", "[Unit]"]
+        avoid: ["gestor de servicios"]
+
+      - term: "PAM"
+        es: ["PAM", "módulos de autenticación"]
+        en: ["Linux-PAM", "PAM modules"]
+        evidence: ["/etc/pam.d", "pam_time", "pam_"]
+        avoid: ["autenticación"]
+
+      - term: "Bash"
+        es: ["Bash", "scripts de shell"]
+        en: ["Bash", "shell scripting"]
+        evidence: ["#!/usr/bin/env bash", ".sh", "set -euo pipefail"]
+        avoid: ["automatización"]
+
+      - term: "nftables"
+        es: ["nftables", "cortafuegos"]
+        en: ["nftables", "firewall"]
+        evidence: ["nft", "table inet", "nftables.conf"]
+        avoid: ["seguridad de red"]
+
+      - term: "DNS"
+        es: ["DNS", "resolución de nombres"]
+        en: ["DNS", "DoH", "DoT"]
+        evidence: ["resolved.conf", "hosts", "dns"]
+        avoid: ["internet"]
+
+  csharp-dotnet:
+    label: "Aplicaciones .NET"
+    skills:
+      - term: "C#"
+        es: ["C#"]
+        en: ["C#", "CSharp"]
+        evidence: [".cs", ".csproj", "namespace "]
+        avoid: ["lenguaje de programación"]
+
+      - term: ".NET 10"
+        es: [".NET"]
+        en: ["dotnet", ".NET 10"]
+        evidence: ["net10.0", ".csproj", "Microsoft.NET.Sdk"]
+        avoid: ["framework"]
+
+      - term: "Terminal.Gui"
+        es: ["interfaz de terminal"]
+        en: ["TUI", "terminal UI"]
+        evidence: ["Terminal.Gui", "Views/", "App.cs"]
+        avoid: ["interfaz gráfica"]
+
+      - term: "Unix domain sockets"
+        es: ["sockets Unix", "IPC"]
+        en: ["Unix domain sockets", "IPC", "AF_UNIX"]
+        evidence: ["AF_UNIX", "SocketType.Stream", "Ipc"]
+        avoid: ["comunicación entre procesos"]
+
+      - term: "SQLite"
+        es: ["SQLite"]
+        en: ["SQLite"]
+        evidence: ["sqlite", ".db", "Dapper"]
+        avoid: ["base de datos"]
+
+      - term: "Argon2id"
+        es: ["Argon2id"]
+        en: ["Argon2"]
+        evidence: ["argon2", "Konscious"]
+        avoid: ["hash de contraseñas"]
+
+      - term: "xUnit"
+        es: ["pruebas unitarias"]
+        en: ["xUnit", "unit testing"]
+        evidence: ["xunit", "[Fact]", "[Theory]"]
+        avoid: ["testing"]
+
+  python-cli:
+    label: "Python y CLI"
+    skills:
+      - term: "Python 3.12"
+        es: ["Python"]
+        en: ["Python"]
+        evidence: ["pyproject.toml", ".py", "requires-python"]
+        avoid: ["lenguaje de scripting"]
+
+      - term: "uv"
+        es: ["uv", "entorno reproducible"]
+        en: ["uv", "reproducible environment"]
+        evidence: ["uv.lock", "uv sync", ".python-version"]
+        avoid: ["gestor de paquetes"]
+
+      - term: "Typer"
+        es: ["CLI", "línea de comandos"]
+        en: ["CLI", "command-line interface"]
+        evidence: ["typer", "Typer(", "argparse"]
+        avoid: ["herramienta de terminal"]
+
+      - term: "Rich"
+        es: ["salida enriquecida en terminal"]
+        en: ["rich terminal output"]
+        evidence: ["rich", "Console(", "Table("]
+        avoid: ["interfaz"]
+
+      - term: "pytest"
+        es: ["pytest"]
+        en: ["pytest"]
+        evidence: ["pytest", "test_", "conftest.py"]
+        avoid: ["testing"]
+
+      - term: "ruff"
+        es: ["linting"]
+        en: ["ruff", "linting"]
+        evidence: ["ruff", "[tool.ruff]"]
+        avoid: ["calidad de código"]
+
+      - term: "Jinja2"
+        es: ["plantillas"]
+        en: ["templates", "Jinja2"]
+        evidence: ["jinja", ".j2", "Template("]
+        avoid: ["generación de texto"]
+
+      - term: "Pydantic"
+        es: ["validación de datos"]
+        en: ["Pydantic", "data validation"]
+        evidence: ["pydantic", "BaseModel", "model_validate"]
+        avoid: ["validación"]
+
+  ia-y-rag:
+    label: "IA y RAG"
+    skills:
+      - term: "RAG"
+        es: ["RAG", "generación aumentada por recuperación"]
+        en: ["RAG", "retrieval-augmented generation"]
+        evidence: ["retriev", "chunk", "index", "embedding"]
+        avoid: ["inteligencia artificial"]
+
+      - term: "Embeddings"
+        es: ["embeddings", "vectores"]
+        en: ["embeddings", "vector search"]
+        evidence: ["embed", "cosine", "vector", "sqlite-vec"]
+        avoid: ["búsqueda avanzada"]
+
+      - term: "SQLite FTS5"
+        es: ["búsqueda de texto completo"]
+        en: ["full-text search", "FTS5", "BM25"]
+        evidence: ["fts5", "MATCH", "bm25", "CREATE VIRTUAL TABLE"]
+        avoid: ["buscador"]
+
+      - term: "fastembed"
+        es: ["embeddings locales"]
+        en: ["ONNX embeddings", "local embeddings"]
+        evidence: ["fastembed", "onnx", "e5"]
+        avoid: ["modelo de IA"]
+
+      - term: "Prompt engineering"
+        es: ["ingeniería de prompts"]
+        en: ["prompt engineering"]
+        evidence: ["prompts/", "system prompt", "few-shot"]
+        avoid: ["usar IA"]
+
+      - term: "Map-reduce"
+        es: ["map-reduce sobre contexto"]
+        en: ["map-reduce", "context compression"]
+        evidence: ["extract", "summariz", "reduce", "brief"]
+        avoid: ["resumen"]
+
+      - term: "Evaluación de LLM"
+        es: ["evaluación de salida"]
+        en: ["LLM evaluation", "rubric"]
+        evidence: ["rubric", "critique", "score"]
+        avoid: ["control de calidad"]
+
+  datos-y-sql:
+    label: "Datos y SQL"
+    skills:
+      - term: "SQL"
+        es: ["SQL"]
+        en: ["SQL"]
+        evidence: [".sql", "SELECT", "CREATE TABLE"]
+        avoid: ["consultas"]
+
+      - term: "Diseño de esquemas"
+        es: ["modelado de datos"]
+        en: ["schema design", "data modeling"]
+        evidence: ["CREATE TABLE", "REFERENCES", "schema"]
+        avoid: ["bases de datos"]
+
+      - term: "Índices B-Tree"
+        es: ["índices", "B-Tree"]
+        en: ["B-Tree indexes", "indexing"]
+        evidence: ["CREATE INDEX", "btree", "covering"]
+        avoid: ["optimización"]
+
+      - term: "Transacciones"
+        es: ["transacciones", "ACID"]
+        en: ["transactions", "ACID"]
+        evidence: ["BEGIN", "COMMIT", "ROLLBACK", "isolation"]
+        avoid: ["consistencia"]
+
+      - term: "Planes de ejecución"
+        es: ["EXPLAIN", "planes de consulta"]
+        en: ["execution plans", "EXPLAIN"]
+        evidence: ["EXPLAIN", "query plan", "seq scan"]
+        avoid: ["rendimiento"]
+
+      - term: "Docker"
+        es: ["Docker", "contenedores"]
+        en: ["Docker", "containers"]
+        evidence: ["docker-compose", "Dockerfile", "container_name"]
+        avoid: ["virtualización"]
+
+  devops:
+    label: "DevOps y flujo de trabajo"
+    skills:
+      - term: "Git"
+        es: ["Git"]
+        en: ["Git"]
+        evidence: [".git", "commit", "branch", "merge"]
+        avoid: []
+
+      - term: "GitHub Actions"
+        es: ["CI", "integración continua"]
+        en: ["CI", "GitHub Actions"]
+        evidence: [".github/workflows", "ci.yml", "runs-on"]
+        avoid: ["automatización"]
+
+      - term: "Conventional commits"
+        es: ["commits convencionales"]
+        en: ["conventional commits"]
+        evidence: ["feat:", "fix:", "docs:"]
+        avoid: ["buenas prácticas"]
+
+      - term: "ADRs"
+        es: ["registro de decisiones", "ADR"]
+        en: ["architecture decision records", "ADR"]
+        evidence: ["docs/adr", "ADR-", "Contexto", "Decisión"]
+        avoid: ["documentación"]
+
+  documentacion:
+    label: "Documentación técnica"
+    skills:
+      - term: "Documentación técnica"
+        es: ["documentación"]
+        en: ["technical writing"]
+        evidence: ["README.md", "docs/", "guide"]
+        avoid: ["escribir bien"]
+
+      - term: "Mermaid"
+        es: ["diagramas como código"]
+        en: ["diagrams as code", "Mermaid"]
+        evidence: ["mermaid", "graph ", "sequenceDiagram"]
+        avoid: ["diagramas"]
+
+      - term: "Markdown"
+        es: ["Markdown"]
+        en: ["Markdown"]
+        evidence: [".md", "##"]
+        avoid: ["documentos"]
+
+      - term: "Docs de aprendizaje"
+        es: ["documentación pedagógica"]
+        en: ["learning docs", "teaching"]
+        evidence: ["learning/", "glosario", "conceptos"]
+        avoid: ["apuntes"]

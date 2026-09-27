@@ -53,6 +53,20 @@ Contexto: estas herramientas operan sobre datos públicos y LinkedIn restringe e
 | Verbos de logro + métrica | `knowledge/rubric.md` |
 | Prohibido usar keywords de cosas no hechas | `knowledge/disclaimers.md` |
 
+## ¿Es redundante publicar el post y cargar el proyecto en el perfil?
+
+No: son dos mecanismos distintos sobre el mismo hecho.
+
+| Superficie | Mecanismo | Vida útil |
+|---|---|---|
+| Post del feed | Distribución temporal: tu red, el feed, las primeras horas | Días |
+| Sección Proyectos | Búsqueda y evaluación: queda en tu perfil, alimenta Skills | Permanente |
+
+- Cargar proyectos está recomendado de forma consistente por guías de carrera (Resume Worded, Teal) y por contenido de LinkedIn: «un proyecto documentado rinde más que meses de publicaciones genéricas» (opinión de industria, no dato oficial).
+- **No se encontró evidencia de penalización** por publicar y además cargar el proyecto; el riesgo es de forma, no de algoritmo.
+- El único riesgo real es **duplicar el texto literal**: el post es narrativa (atención) y el formulario son hechos buscables (búsqueda). Mismo hecho, distinta forma.
+- Recomendación derivada: publicar el post primero y cargar el proyecto el mismo día. No compiten: se acumulan.
+
 ## Honestidad / límites
 
 - LinkedIn **no publica** el scoring de su búsqueda; lo documentado son filtros, operadores y dónde se resaltan keywords.

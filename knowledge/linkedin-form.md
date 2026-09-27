@@ -60,5 +60,6 @@ postforge gen <slug>
 - `form.md` completo: nombre, descripción (≤ 2.000), 5 aptitudes, fechas, colaboradores, asociado con.
 - Media: hasta 50 elementos; acá sí conviven varias piezas (imagen + PDF + enlaces).
 - Publicar el formulario **después** del post: el post trae la visita; el proyecto queda como evidencia permanente y buscable.
+- **¿Es redundante?** No: el post distribuye (feed, primeras horas) y el formulario permanece (búsqueda). La única regla es no duplicar el texto literal. Fuente: `docs/research/recruiter-search-ats.md` §redundancia.
 
 Fuente: LinkedIn Help `a527229` (multi-imagen, ratio 4:5), `a1516731` (formatos), `docs/research/visuals-pipeline.md`.

@@ -4,13 +4,12 @@
 
 ## Fase activa
 
-**Fase 0 — Setup + research + spikes** (en curso: Lotes 1 y 2 completos; Lote 3 en curso — 3a reglas de escritura ✅, falta 3b).
+**Fase 0 — Setup + research + spikes** (en curso: Lotes 1, 2 y 3 completos — research 4/4 ✅, knowledge completo ✅).
 
 ## Próximo paso
 
-1. **Lote 3b:** `keyword-taxonomy.yaml` + `archetypes/` + `visuals.md` + `examples/`.
-2. **Lote 4:** código (`uv`, CLI, `llm.py`, tests, CI) + spikes → ADR-004 (embeddings) y ADR-005 (modelos).
-3. **Lote 5:** `prompts/` + learning y progress-log de Fase 0.
+1. **Lote 4:** código (`uv`, CLI, `llm.py`, tests, CI) + spikes → ADR-004 (embeddings) y ADR-005 (modelos).
+2. **Lote 5:** `prompts/` + learning y progress-log de Fase 0.
 
 ## Decisiones recientes
 

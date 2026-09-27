@@ -211,7 +211,7 @@
 
 ### Scope
 
-- Selector de arquetipo (backend-api, cli-systems, data-rag, lib, iac-security).
+- Selector de arquetipo (backend-api, cli-systems, data-rag, docs-learning, iac-security).
 - Plantillas Jinja2 + prompts `write-post` y `critique-post` con rúbrica.
 - `form.md`: nombre ≤ 255, descripción ≤ 2000, 5 aptitudes con evidencia, fechas, colaboradores.
 - `checklist.md`: pasos previos a publicar.

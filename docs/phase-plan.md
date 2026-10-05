@@ -119,11 +119,11 @@
 
 ### Features (TDD)
 
-#### Feature 1.1: Scanner git-aware (con fallback sin git)
+#### Feature 1.1: Scanner git-aware (con fallback sin git) ✅ (2026-10-05)
 
-- [ ] Test RED: ignora `bin/`, `obj/`, `.venv/` y archivos binarios.
-- [ ] Test RED: sin `.git`, hace walk con exclusiones explícitas.
-- [ ] `src/postforge/ingest/scanner.py` (GREEN).
+- [x] Test RED: ignora `bin/`, `obj/`, `.venv/` y archivos binarios.
+- [x] Test RED: sin `.git`, hace walk con exclusiones explícitas.
+- [x] `src/postforge/ingest/scanner.py` (GREEN).
 
 #### Feature 1.2: Chunker de markdown
 

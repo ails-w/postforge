@@ -6,7 +6,7 @@
 ## Estado
 
 **Estado**: En Progreso
-**Última Actualización**: 2026-10-05 19:00
+**Última Actualización**: 2026-10-05 19:10
 
 ## Objetivos
 
@@ -17,13 +17,20 @@
 
 ## Progreso
 
-- [ ] Feature 1.1: Scanner git-aware (con fallback sin git)
+- [x] Feature 1.1: Scanner git-aware (con fallback sin git) (2026-10-05)
 - [ ] Feature 1.2: Chunker de markdown
 - [ ] Feature 1.3: Chunker de código
 - [ ] Feature 1.4: Esquema SQLite + FTS5
 - [ ] Feature 1.5: CLI `index` y `search`
 
 ## Tareas Completadas
+
+### 2026-10-05 — Feature 1.1: Scanner git-aware
+
+- **Descripción**: `scan_repo(root)` enumera los archivos del proyecto. Con git usa `git ls-files` (solo trackeados); sin git hace walk con exclusiones explícitas. Descarta binarios (byte NUL) y devuelve rutas relativas ordenadas.
+- **Archivos**: `src/postforge/ingest/__init__.py`, `src/postforge/ingest/scanner.py`, `tests/test_scanner.py`.
+- **Tests**: 4 nuevos (19 en total, todos verdes).
+- **Decisión**: `list_tracked_files` usa `git ls-files` (solo trackeados), no `--others`; el proyecto publica repos terminados y se prioriza reproducibilidad.
 
 ### 2026-10-05 — Kickoff de la fase
 
@@ -41,10 +48,10 @@ _(ninguno todavía)_
 
 ## Métricas
 
-- Tests escritos: 0
-- Tests pasando: 15/15 (suite de Fase 0)
+- Tests escritos: 4 (Fase 1) · 19 en total
+- Tests pasando: 19/19 (100%)
 - Cobertura: —
 
 ## Pendientes
 
-- Feature 1.1 (scanner) con su test RED antes de implementar.
+- Feature 1.2: chunker de markdown (test RED primero).

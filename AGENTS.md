@@ -46,6 +46,7 @@ Estructura objetivo y pipeline → `docs/architecture.md`. El árbol mezcla lo i
 - **Sin "Co-Authored-By" ni atribución IA** — *Reason:* regla global del usuario.
 - **Docs: bloques de código con cabecera `python`** (nunca `py`) — *Reason:* convención del usuario.
 - **No duplicar contenido entre archivos**: si hay que copiar un párrafo, está mal ubicado.
+- **Docs de proceso en lote, no por feature**: `docs/learning/`, `docs/progress-log/`, `docs/handoff.md` y los checkboxes de `docs/phase-plan.md` se actualizan al **cerrar la fase** — o cuando el usuario lo pida explícitamente —, nunca en cada feature — *Reason:* el commit de una feature es código + tests; actualizar logs y handoff por feature quema contexto sin aportar valor.
 
 ## TDD ESTRICTO (regla dura)
 
@@ -74,7 +75,7 @@ Este es un proyecto de **APRENDIZAJE**. El objetivo es que el estudiante entiend
 - NO inventar métricas, stacks ni resultados que no estén en el repo fuente (`knowledge/disclaimers.md`).
 - NO mezclar `knowledge/` dentro del índice RAG: son capas distintas (`docs/adr/ADR-003-rag-per-project-vs-knowledge.md`).
 - NO crear carpetas vacías ni duplicar contenido.
-- NO modificar `docs/handoff.md` salvo al iniciar/cerrar sesión.
+- NO modificar `docs/handoff.md` fuera del inicio/cierre de sesión o del cierre de fase.
 - NO automatizar login ni publicación en LinkedIn.
 - NO producir desde el chat: el chat **refina** (`refine`); producir es batch y reproducible.
 
@@ -88,14 +89,14 @@ Este es un proyecto de **APRENDIZAJE**. El objetivo es que el estudiante entiend
 
 - Ramas: `main` + `dev`. En Fase 0 se commitea directo en `main`; al iniciar la primera fase de features, el trabajo va en `dev` y se abre PR al cerrar cada fase.
 - Un commit por feature; conventional commits en inglés.
-- DoD de una feature: test RED que pasa (GREEN) + refactor + commit convencional.
-- El aprendizaje se documenta al cerrar la fase en `docs/learning/phase-NN-name.md`, junto con `progress-log/`, `phase-plan.md` y `handoff.md`.
+- DoD de una feature: test RED que pasa (GREEN) + refactor + commit convencional. El commit de una feature toca **solo código y tests** (no docs de proceso).
+- El aprendizaje, el log y el estado se documentan **en lote al cerrar la fase**: `docs/learning/phase-NN-name.md`, `docs/progress-log/`, los checkboxes de `docs/phase-plan.md` y `docs/handoff.md`.
 
 ## Tabla de punteros
 
 | Área | Documento |
 |---|---|
-| **Estado actual** (LEER al iniciar, ACTUALIZAR al cerrar) | `docs/handoff.md` |
+| **Estado actual** (LEER al iniciar; ACTUALIZAR al cerrar fase/sesión) | `docs/handoff.md` |
 | Mapa de navegación completo | `docs/index.md` |
 | Plan de fases (scope + criterios de salida) | `docs/phase-plan.md` |
 | Arquitectura y pipeline | `docs/architecture.md` |

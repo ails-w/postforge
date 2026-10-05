@@ -16,7 +16,7 @@
 
 | # | Nombre | Estado | Conceptos | Log |
 |---|--------|--------|-----------|-----|
-| 0 | Setup + research + spikes | ✅ (CI en el 1.er push) | `phase-00-setup.md` | `phase-00-setup.md` |
+| 0 | Setup + research + spikes | ✅ (CI verde en el 1.er push) | `phase-00-setup.md` | `phase-00-setup.md` |
 | 1 | Ingesta + índice | ⏳ | `phase-01-ingest.md` | `phase-01-ingest.md` |
 | 2 | Comprensión | ⏳ | `phase-02-understand.md` | `phase-02-understand.md` |
 | 3 | Redacción + formulario | ⏳ | `phase-03-write.md` | `phase-03-write.md` |
@@ -24,7 +24,7 @@
 
 ---
 
-## Fase 0 — Setup + research + spikes ✅ (2026-09-27; CI pendiente del primer push)
+## Fase 0 — Setup + research + spikes ✅ (2026-09-27; CI verde en el primer push)
 
 **Objetivo:** Dejar el repo vivo (scaffold + docs), la evidencia de dominio investigada y los dos spikes técnicos resueltos: la salida JSON de `opencode run` y el modelo de embeddings.
 
@@ -46,15 +46,15 @@
 
 ### Conceptos de aprendizaje
 
-- [ ] Entornos reproducibles con uv → `docs/learning/phase-00-setup.md`
-- [ ] Salida estructurada de un LLM por CLI (JSON + validación) → idem
-- [ ] Embeddings: qué son y cómo se eligen → idem
-- [ ] CI para un CLI en Python → idem
+- [x] Entornos reproducibles con uv → `docs/learning/phase-00-setup.md`
+- [x] Salida estructurada de un LLM por CLI (JSON + validación) → idem
+- [x] Embeddings: qué son y cómo se eligen → idem
+- [x] CI para un CLI en Python → idem
 
 ### Criterio de salida
 
 - [x] `uv run postforge --help` responde.
-- [ ] CI (ruff + pytest) en verde (falta el primer push).
+- [x] CI (ruff + pytest) en verde (primer push verificado: run #36323272674).
 - [x] La salida de `opencode run --format json` se parsea; modelos barato/fuerte elegidos (ADR-005).
 - [x] Modelo de embeddings elegido con medición (ADR-004).
 - [x] Los 4 docs de research existen, con fuentes y fecha.
@@ -67,7 +67,7 @@
 
 - [x] Test RED: `postforge --help` sale 0 y lista comandos.
 - [x] `pyproject.toml` + `src/postforge/cli.py` con Typer (GREEN).
-- [x] `uv run pytest` y `ruff` en verde; CI en GitHub Actions (pendiente verificar en el primer push).
+- [x] `uv run pytest` y `ruff` en verde; CI en GitHub Actions (verificado en el primer push: run #36323272674).
 
 #### Feature 0.2: Adaptador LLM (`opencode run`) ✅ (2026-09-27)
 

@@ -1,10 +1,10 @@
 # Handoff — postforge
 
-> Estado MUTABLE. Se sobreescribe al iniciar/cerrar sesión. Última actualización: 2026-09-27.
+> Estado MUTABLE. Se sobreescribe al iniciar/cerrar sesión. Última actualización: 2026-10-05.
 
 ## Fase activa
 
-**Fase 0 — COMPLETADA** (scaffold, research, knowledge, prompts, código base y spikes). Único pendiente: verificar el CI en el primer push.
+**Fase 0 — COMPLETADA Y VERIFICADA** (scaffold, research, knowledge, prompts, código base y spikes). CI en verde en el primer push (run #36323272674, 2026-09-27).
 **Próxima: Fase 1 — Ingesta + índice** (se abre en rama `dev`).
 
 ## Próximo paso
@@ -32,7 +32,7 @@
 
 ## Riesgos
 
-- CI sin verificar hasta el primer push (setup-uv v10.1.0 + `uv sync --frozen`).
+- CI verificado en el primer push: run #36323272674 completed/success (setup-uv + `uv sync --frozen`).
 - Cuota de la suscripción → mitigado: tier barato para el map; modelos configurables.
 - `mmdc` puede requerir Chromium headless → verificar en Fase 4.
 - Secretos: nada de la auth de OpenCode entra al repo. Opcional antes del push público: `gitleaks` como pre-commit.

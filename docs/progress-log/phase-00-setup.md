@@ -21,7 +21,7 @@
 - [x] Lote 3: `knowledge/` completo (reglas, rúbrica, taxonomía, arquetipos, visuals, examples) (2026-09-27)
 - [x] Lote 4: código — uv, CLI, `llm.py`, tests, CI, ADR-004/005 (2026-09-27)
 - [x] Lote 5: `prompts/` + learning + cierre de fase (2026-09-27)
-- [ ] Verificar CI en el primer push (pendiente de crear el remoto)
+- [x] Verificar CI en el primer push (run #36323272674, verde, 2026-09-27)
 
 ## Tareas Completadas
 

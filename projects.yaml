@@ -21,3 +21,13 @@ projects:
     associated_with: null
     collaborators: []
     status: pilot
+
+  - slug: focusblock
+    name: FocusBlock
+    path: ~/Projects/focusblock
+    dates:
+      start: 2026-09
+      end: null
+    associated_with: null
+    collaborators: []
+    status: pilot
